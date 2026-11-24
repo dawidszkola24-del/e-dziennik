@@ -1,8 +1,4 @@
-# e-Dziennik PRO 3.0
-1. Wykonaj upgrade3.sql w Supabase SQL Editor (po aktualizacji 2.0).
-2. Wgraj index.html, app.js, style.css, config.js i README.md do głównego katalogu GitHub. Nie publikuj SQL.
-3. Poczekaj na Pages, Ctrl+F5. Wybierz właściwy portal logowania.
-4. Generator dyrekcji: administrator generuje dane, tworzy użytkownika w Supabase Authentication (Auto Confirm), kopiuje UID i przypisuje profil w generatorze. To nie jest automatyczne tworzenie Auth.
-5. Oceny: nauczyciel przypisany do przedmiotu, temat i zatwierdzona obecność, następnie Oceny. Średnia ważona, +/- przy liczbie to 0,5 (ograniczenie 1–6); samodzielne znaki i nb/bz/np pomijane. Klasyfikacja pozostaje całkowita.
-6. Terminarz: miesiące 2026–2027, plus przy dniu, kolor wydarzenia. Wydarzenia zapisują się w bazie.
-Tylko fikcyjne dane. Nie testowano na działającym Supabase. Zachowano wcześniejsze RLS i moduły; wykonaj testy ról. Nie umieszczaj tajnych kluczy w repozytorium.
+# e-Dziennik PRO 3.2
+Wgraj pięć plików z tego ZIP do głównego katalogu GitHub, zastępując poprzednie. Nie trzeba ponownie uruchamiać SQL, jeśli wykonano blokadę password_gate i opublikowano obie funkcje create-school-account oraz change-school-password z rozmowy. Po publikacji Ctrl+F5. Nagłówek pokazuje 3.2.
+Administrator: generator uczniów, nauczycieli lub dyrekcji tworzy konto Auth i profil przez funkcję serwerową. Ucznia przypisuje do klasy osobnym zapisem; jeśli zapis nie powiedzie się, konto nadal istnieje, sprawdź zakładkę Uczniowie. Hasła początkowe są tylko w pamięci strony, wydrukuj przed odświeżeniem. Istniejące profile są widoczne bez haseł. Pierwsze logowanie wyświetla formularz zmiany hasła, potem wymaga ponownego logowania. Wybierz właściwy portal.
+Zachowano kod pozostałych modułów 3.1. Nie testowano na żywej bazie ani nie audytowano wszystkich reguł RLS. Hasło początkowe pozostaje ważne do zmiany; nie jest atomowym tokenem jednokrotnego użycia. Testuj wyłącznie fikcyjne dane. Nie publikuj tajnych kluczy. W razie problemów sprawdź logi funkcji. Zalecane minimum 12 znaków.
